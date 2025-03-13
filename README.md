@@ -20,6 +20,26 @@ O projeto envolve o desenvolvimento de uma API REST em Java utilizando o framewo
    * Endpoint que escuta e processa eventos do tipo "contact.creation", enviados
    pelo webhook do HubSpot.
 
+# Instruções para execução
+
+* Configure as variáveis de ambiente na pasta do projeto em um arquivo .env
+
+```env
+HUBSPOT_CLIENT_ID=xxxx
+HUBSPOT_CLIENT_SECRET=xxxx
+HUBSPOT_OAUTH_REDIRECT_URI=http://localhost:8080/oauth/callback
+```
+
+* Ainda na pasta do projeto, faça o build da imagem Docker
+```bash
+docker build -t image-name .
+```
+* Por fim, execute o container através da imagem
+```bash
+docker run --env-file .env -p 8080:8080 image-name
+```
+
+
 # Arquitetura do Projeto
 O projeto é estruturado em pacotes específicos para cada funcionalidade, adotando uma abordagem que reflete o princípio "S" do conceito SOLID. Esse princípio visa delegar responsabilidades específicas a diferentes partes do sistema, promovendo maior coesão e manutenção.<br>
 <br>
