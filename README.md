@@ -530,6 +530,19 @@ Respostas possíveis:
 
 **Erro de validação dos campos.**
 
+* ```429 TOO MANY REQUESTS```
+
+```json
+{
+    "timestamp": "2025-03-13T19:41:59.637301100",
+    "status": 429,
+    "error": "Too Many Requests",
+    "message": "Rate limit exceeded, try again later.",
+    "path": "/contact"
+}
+```
+**Erro de rate limit**.
+
 ## Webhook para eventos contact.creation
 
 ```java
